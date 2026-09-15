@@ -213,7 +213,7 @@ function frameHtml(o, si){
     ';--cw:' + a.w + ';--ch:' + a.h + ';--amp:' + amp + 'deg;--dur:' + dur + 's;--del:' + del +
     's;--hi:' + hi + 's;--h0:' + h0.toFixed(2) + 'deg;--h1:' + h1.toFixed(2) + 'deg;--h2:' +
     h2.toFixed(2) + 'deg;--h3:' + h3.toFixed(2) + 'deg;--hdur:' + hdur +
-    's" href="render-day.html?date=' + o.day + '&from=seal" title="' + esc(tipDate) + ' · ' + o.count + ' 条 · ' + comma(o.chars) + ' 字（点开这一天）">' +
+    's" href="day.html?date=' + o.day + '&from=seal" title="' + esc(tipDate) + ' · ' + o.count + ' 条 · ' + comma(o.chars) + ' 字（点开这一天）">' +
     '<span class="sway"><i class="ln"></i><span class="card"></span>' +
     '<span class="txt side-' + a.side + '">' + face + '</span></span></a>';
 }
@@ -345,7 +345,7 @@ addEventListener("keydown", function(e){ if (e.key === "Escape") closePick(); })
 /* 返回：固定回日历主页（22:57 定）。不再 history.back——上一条历史常是单日页，
    按返回会弹回详情页；location.replace 也不堆历史 */
 document.querySelector(".backbtn").onclick = function(){
-  location.replace("render-month.html");
+  location.replace("index.html");
 };
 
 /* 桌面横滑（触摸端走原生 pan-x 不受影响）：鼠标按住拖拽平移 + 滚轮横滚，

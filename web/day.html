@@ -238,7 +238,7 @@ body.seal-mode .hero-canopy{display:block;position:absolute;inset:0;pointer-even
 <canvas id="petalLayer" aria-hidden="true"></canvas>
 <script>
 /* 来路判定（最先执行）：封存树点牌进来 = 绿色主题 + 返回回封存树（22:48 定） */
-var SEAL_MODE = !!(location.search.match(/[?&]from=seal\b/) || document.referrer.indexOf("render-seal") > -1);
+var SEAL_MODE = !!(location.search.match(/[?&]from=seal\b/) || document.referrer.indexOf("seal.html") > -1);
 if (SEAL_MODE) document.body.classList.add("seal-mode");
 // 退出键：记得来路 —— 封存树点牌进来的退回封存树，月树进来的回月树，直接打开兜底回月树
 // 返回类跳转一律 location.replace（不往历史里加条目，避免「封存树↔单日页」按返回来回弹）
@@ -246,9 +246,9 @@ if (SEAL_MODE) document.body.classList.add("seal-mode");
   var bk = document.querySelector(".backbtn");
   if(!bk) return;
   bk.onclick = function(){
-    if(SEAL_MODE){ location.replace("render-seal.html"); return; }
-    if(document.referrer.indexOf("render-month") > -1 && history.length > 1){ history.back(); }
-    else{ location.replace("render-month.html"); }
+    if(SEAL_MODE){ location.replace("seal.html"); return; }
+    if(document.referrer.indexOf("index.html") > -1 && history.length > 1){ history.back(); }
+    else{ location.replace("index.html"); }
   };
 })();
 var RECS = [{"time":"08:40","sub":"悄悄话","chars":96,"milestone":false,"milestoneTitle":"","preview":"示例 · 清晨的悄悄话","text":"清晨的光落在桌角，我想把今天好好记下来。这一页是示例信笺——风一页一页翻，日子一天一天挂。"},{"time":"13:05","sub":"","chars":54,"milestone":true,"milestoneTitle":"小小的里程碑","preview":"示例 · 里程碑","text":"下午做成了件小事，值得挂牌。把这一刻封进树里，等以后回来看。"},{"time":"21:30","sub":"悄悄话","chars":71,"milestone":false,"milestoneTitle":"","preview":"示例 · 晚安前","text":"晚安前写两行。树上的牌轻轻晃，像有人在说：今天也辛苦了。"}];
